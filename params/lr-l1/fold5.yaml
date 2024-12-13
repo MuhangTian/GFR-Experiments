@@ -1,0 +1,33 @@
+project: MIMIC (6.15)
+entity: dukeds-mimic2023
+method: grid
+metric:
+  name: Mean Validation AUROC
+  goal: maximize
+parameters:
+  solver: 
+    values: ['liblinear', 'saga']
+  C:
+    values: [0.0001, 0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000]
+  max_iter:
+    value: 1000
+  penalty:
+    value: l1
+name: LogReg l1 Fold 5 (nonlinear, oasis)
+program: src/exp_6.6_to_6.27/sweep_oasis.py
+command:      # this is what happens in command line
+  - python
+  - ${program}
+  - "--model_name"
+  - "logreg"
+  - "--disease"
+  - "all"
+  - "--resample_ratio"
+  - -1
+  # - "--oasis"
+  - "--KF"
+  - "--K"
+  - 5
+  - "--fold"
+  - 5
+  - ${args}

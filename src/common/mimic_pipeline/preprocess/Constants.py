@@ -1,0 +1,50 @@
+ITEMID_DICT = {
+    "heartrate": (211, 220045),
+    "sysbp": (51, 442, 455, 6701, 220179, 220050),
+    "diasbp": (8368, 8440, 8441, 8555, 220180, 220051),
+    "meanbp": (456,52,6702,443,220052,220181,225312),
+    "resprate": (618, 615, 220210, 224690),
+    "tempf": (678, 223761),
+    "tempc": (676, 223762),
+    "spo2": (646, 220277),
+    "glucose": (807, 811, 1529, 3745, 3744, 225664, 220621, 226537),
+    "bun": (51006),
+    "urine output": None,
+    "rate_epinephrine": "rate_epinephrine",
+    "rate_norepinephrine": "rate_norepinephrine",
+    "rate_dopamine": "rate_dopamine",
+    "rate_dobutamine": "rate_dobutamine",
+    "aado2": (50801),
+    "pao2": (50821),
+    "fio2": (3420, 190, 223835, 3422),
+    'creatinine': (50912),
+    'bicarbonate': (50882),
+}
+
+FEATURE_TABLE_DICT = {
+    "heartrate": "chartevents",
+    "meanbp": "chartevents",
+    "resprate": "chartevents",
+    "tempc": "chartevents",
+    "bun": 'labevents',
+    'urine output': 'outputevents',
+    "rate_epinephrine": "inputevents",
+    "rate_norepinephrine": "inputevents",
+    "rate_dopamine": "inputevents",
+    "rate_dobutamine": "inputevents",
+    "aado2": "labevents",
+    'pao2': 'labevents',
+    'fio2': 'chartevents',
+    'creatinine': 'labevents',
+    'sysbp': 'chartevents',
+    'diabp': 'chartevents',
+    'spo2': 'chartevents',
+    'glucose': 'chartevents',
+    'bicarbonate': 'labevents',
+}
+
+DISEASE_DICT = {
+    'heart_attack': (410,),          
+    'heart_failure': (428,),
+    'akf': (584, ),     # acute kidney failure
+}

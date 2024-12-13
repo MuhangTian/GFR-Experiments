@@ -1,0 +1,53 @@
+entity: dukeds-mimic2023
+method: grid
+metric:
+  goal: maximize
+  name: Mean Validation AUROC
+name: EBM Fold 2 (union 49)
+parameters:
+  inner_bags:
+    values:
+      - 1
+      - 3
+      - 5
+      - 7
+      - 9
+      - 10
+  interactions:
+    values:
+      - 0
+      - 1
+      - 2
+      - 3
+  learning_rate:
+    values:
+      - 0.0001
+      - 0.0005
+      - 0.001
+      - 0.005
+      - 0.01
+      - 0.05
+      - 0.1
+  outer_bags:
+    values:
+      - 2
+      - 4
+      - 6
+project: MIMIC
+program: src/exp_6.6_to_6.27/sweep.py
+command:      # this is what happens in command line
+  - python
+  - ${program}
+  - "--model_name"
+  - "ebm"
+  - "--disease"
+  - "all"
+  - "--resample_ratio"
+  - -1
+  # - "--oasis"
+  - "--KF"
+  - "--K"
+  - 5
+  - "--fold"
+  - 2
+  - ${args}

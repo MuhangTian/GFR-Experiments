@@ -1,0 +1,38 @@
+project: MIMIC (6.15)
+entity: dukeds-mimic2023
+name: FasterRisk Fold 2 (G=16, 17, 18, 19, union features)
+method: grid
+metric:
+  name: Mean Validation AUROC
+  goal: maximize
+parameters:
+  k:  # number of features to consider (sparsity constraint), controls number of scores for scoring cards
+    values: [30, 40, 50, 60, 70, 80, 90]
+  lb: # lower bound on coefficients (sort of like regularization)
+    values: [-30, -50, -70, -90, -120]
+  ub: # upper bound on coefficients (sort of like regularization)
+    values:  [30, 50, 70, 90, 120]
+  gap_tolerance:  # gap tolerance for the sparse diverse pool of solutions
+    value: 0.3
+  select_top_m: # number of top classifiers (coefficients and intercepts) to select from
+    value: 1
+  group_sparsity:
+    values: [16, 17, 18, 19]
+program: src/exp_6.6_to_6.27/sweep.py
+command:      # this is what happens in command line
+  - python
+  - ${program}
+  - "--model_name"
+  - "fasterrisk"
+  - "--disease"
+  - "all"
+  - "--resample_ratio"
+  - -1
+  # - "--oasis"
+  - "--KF"
+  - "--K"
+  - 5
+  - "--fold"
+  - 2
+  - ${args}
+  

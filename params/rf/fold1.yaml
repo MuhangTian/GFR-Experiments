@@ -1,0 +1,35 @@
+project: MIMIC (6.15)
+entity: dukeds-mimic2023
+method: grid
+metric:
+  name: Mean Validation AUROC
+  goal: maximize
+parameters:
+  n_estimators:
+    values: [20, 50, 80, 100, 120, 150, 180, 200, 250, 300, 350, 400, 450, 500]
+  criterion:
+    values: ["gini", "entropy", "log_loss"]
+  max_depth:
+    values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 20]
+  min_samples_split:
+    values: [2, 4, 6, 8, 10, 0.01, 0.1, 0.2, 0.4]
+  n_jobs:
+    value: -1
+name: Random Forest Fold 1 (union 49)
+program: src/exp_6.6_to_6.27/sweep.py
+command:      # this is what happens in command line
+  - python
+  - ${program}
+  - "--model_name"
+  - "random forest"
+  - "--disease"
+  - "all"
+  - "--resample_ratio"
+  - -1
+  # - "--oasis"
+  - "--KF"
+  - "--K"
+  - 5
+  - "--fold"
+  - 1
+  - ${args}
