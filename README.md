@@ -4,7 +4,7 @@
     <img src="imgs/fr-15.png" alt="Example of a risk score produced by GroupFasterRisk.">
 </figure>
 
-This repository contains the code implementation for experiments in the paper: *Fast and Interpretable Mortality Risk Scores for Critical Care Patients*. We detail the specific steps to reproduce our results below.
+This repository contains the code implementation for experiments in the paper: *Fast and Interpretable Mortality Risk Scores for Critical Care Patients*. We detail the specific steps to reproduce our results below. Our work has been accepted by [JAMIA](https://academic.oup.com/jamia?login=true).
 
 ## Setup 🛠️
 * Install packages using `requirements.txt`.
