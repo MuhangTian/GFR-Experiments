@@ -6,11 +6,11 @@
 
 This repository contains the code implementation for experiments in the paper: *Fast and Interpretable Mortality Risk Scores for Critical Care Patients*. We detail the specific steps to reproduce our results below.
 
-## Setup
+## Setup 🛠️
 * Install packages using `requirements.txt`.
 * Set `PYTHONPATH` to `src/common`. This is because most of the scripts use modules in `mimic_pipeline` directory.
 
-## Data
+## Data 📊
 ### Data Source
 * MIMIC III: https://physionet.org/content/mimiciii/1.4/.
 * eICU: https://physionet.org/content/eicu-crd/2.0/.
@@ -26,7 +26,7 @@ This repository contains the code implementation for experiments in the paper: *
 2. Run `src/common/sql/eicu/extract/union_features.sql`, this script selects the cohorts for our study and generates the data in a tabular form.
 3. Use `src/exp_6.6_to_6.27/union_eicu_generate.ipynb` to save the data as a `.csv` file locally.
 
-## Results
+## Results 📚
 
 ### Figure 1
 1. Use `src/exp_6.6_to_6.27/mimic_groupfasterrisk_train.py` to train GFR models. Set group sparsity as 15. This creates the models without monotonicity constraints.
@@ -71,3 +71,13 @@ This repository contains the code implementation for experiments in the paper: *
 ### Table 1
 1. Use `src/exp_6.6_to_6.27/OOD_calibrate.ipynb` to calibrate GFR models on eICU dataset using a subset of 2000 patients.
 2. Use `src/exp_6.6_to_6.27/OOD_fairness.ipynb` to obtain the numerical results in Table 1.
+
+## Citation
+```bibtex
+@article{zhu2023fast,
+  title={Fast and Interpretable Mortality Risk Scores for Critical Care Patients},
+  author={Zhu, Chloe Qinyu and Tian, Muhang and Semenova, Lesia and Liu, Jiachang and Xu, Jack and Scarpa, Joseph and Rudin, Cynthia},
+  journal={arXiv preprint arXiv:2311.13015},
+  year={2023}
+}
+```
