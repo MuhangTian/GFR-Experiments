@@ -1,5 +1,5 @@
 # Fast and Interpretable Mortality Risk Scores for Critical Care Patients
-[![arxiv badge](https://img.shields.io/badge/arXiv-2311.13015-red)](https://arxiv.org/abs/2311.13015)
+[![DOI](https://img.shields.io/badge/DOI-10.1093/jamia/ocae318-blue.svg)](https://doi.org/10.1093/jamia/ocae318) [![arxiv badge](https://img.shields.io/badge/arXiv-2311.13015-red)](https://arxiv.org/abs/2311.13015)
 <figure>
     <img src="imgs/fr-15.png" alt="Example of a risk score produced by GroupFasterRisk.">
 </figure>
